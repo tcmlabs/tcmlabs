@@ -1,0 +1,22 @@
+{
+  "name": "tcmlabs.fr",
+  "private": true,
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jbmusso/tcmlabs.fr.git",
+  "author": "jbmusso <jbmusso+github@gmail.com>",
+  "scripts": {
+    "start": "gatsby develop",
+    "develop": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.231",
+    "gatsby-plugin-typescript": "^1.4.18",
+    "typescript": "^2.7.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.11.1"
+  }
+}
