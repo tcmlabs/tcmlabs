@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { injectGlobal } from 'styled-components';
 
-import './globalStyles';
+import '../globalStyles';
 
 const Row = styled.div`
   display: flex;
@@ -12,7 +12,6 @@ const Row = styled.div`
 
 const Col = styled.div`
   display: flex;
-  /* align-items: center; */
 `;
 
 const Title = styled.h1`
