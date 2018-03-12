@@ -4,8 +4,8 @@
   "license": "UNLICENSED",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:jbmusso/tcmlabs.fr.git",
-  "author": "jbmusso <jbmusso+github@gmail.com>",
+  "repository": "git@github.com:tcmlabs/tcmlabs.fr.git",
+  "author": "TCM Labs",
   "scripts": {
     "start": "gatsby develop",
     "develop": "gatsby develop",
