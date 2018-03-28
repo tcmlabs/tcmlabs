@@ -1,17 +1,18 @@
 import * as React from 'react';
-import Link from 'gatsby-link';
+import styled from 'styled-components';
 
-function TeamMember({ data }) {
-  const { markdownRemark } = data; // data.markdownRemark holds our post data
-  const { frontmatter: member, html } = markdownRemark;
+function TeamMember() {
   return (
-    <div>
+    <Container>
+      <ImagePlaceholder />
       <div>
-        <h1>{member.firstName}</h1>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-        <Link to="/team">../</Link>
+        <h3>Member Name</h3>
+        <p>
+          This screen is visible only in development. It will not appear if the app crashes in production. ashes in
+          production.
+        </p>
       </div>
-    </div>
+    </Container>
   );
 }
 
@@ -28,3 +29,23 @@ export const pageQuery = graphql`
 `;
 
 export default TeamMember;
+
+const Container = styled.div`
+  text-align: center;
+  padding: 0 50px;
+  flex: 0 0 200px;
+  max-width: 300px;
+  min-width: 200px;
+`;
+
+const ImagePlaceholder = styled.div`
+  background-color: #eaeaea;
+  background-image: url('https://www.placecage.com/200/200');
+  background-size: cover;
+  width: 200px;
+  display: inline-block;
+
+  height: 200px;
+  border-radius: 100%;
+  margin-right: 10px;
+`;

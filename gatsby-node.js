@@ -1,3 +1,3 @@
-const Team = require('./src/team/gatsby-node');
+// const Team = require('./src/team/gatsby-node');
 
-exports.createPages = Team.createPages;
+// exports.createPages = Team.createPages;

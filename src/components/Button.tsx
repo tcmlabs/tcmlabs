@@ -1,43 +1,20 @@
-import * as React from 'react'
-import styled from 'styled-components'
-import ContentWrapper from "./ContentWrapper";
+import styled from 'styled-components';
 
-export default function Footer () {
-  return (
-    <FooterWrapper>
-			<ContentWrapper>
-
-				<FooterColumn>
-					<h3>Contact</h3>
-					<address>
-						128 rue de la boetie
-						75008 Paris
-					</address>
-					<a href="mailto:contact@tcmlabs.fr">contact@tcmlabs.fr</a>
-				</FooterColumn>
-
-				<FooterColumn>
-					<h3>Social</h3>
-					<ul>
-						<li>Twitter</li>
-						<li>Likedin</li>
-						<li>Github</li>
-						<li>Medium</li>
-					</ul>
-				</FooterColumn>
-
-			</ContentWrapper>
-    </FooterWrapper>
-  )
-}
-
-const FooterWrapper = styled.div`
-	display: flex;
-	margin-top: 200px;
-	padding: 100px 0;
-	background-color: #132533;
-`;
-
-const FooterColumn = styled.div`
-	flex: 1;
+export default styled.button`
+  border: 2px solid #bdc7d6;
+  border-radius: 3px;
+  color: #bdc7d6;
+  background-color: #142d3d;
+  padding: 10px 25px;
+  cursor: pointer;
+  & + button {
+    margin-left: 10px;
+  }
+  &:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 5px 12px rgba(0, 0, 0, 0.28);
+    color: #ffffff;
+  }
+  &:active {
+    outline: none;
+  }
 `;

@@ -1,8 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import Link from 'gatsby-link';
-
-import { Row, Col } from '../components/Grid';
 
 class Team extends React.Component {
   render() {
