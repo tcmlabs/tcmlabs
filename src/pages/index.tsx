@@ -5,7 +5,7 @@ import 'normalize.css';
 
 import Button from '../components/Button';
 import ContentWrapper from '../components/ContentWrapper';
-import Footer from '../components/Footer';
+
 import JobOffer from '../components/JobOffer';
 import Logo from '../components/Logo';
 import TeamMember from '../components/TeamMember';
@@ -122,8 +122,6 @@ class Index extends React.Component {
           <JobOffer />
           <Button>Toutes les offres</Button>
         </ContentWrapper>
-
-        <Footer />
       </div>
     );
   }
