@@ -1,4 +1,5 @@
 const Team = require('./src/team/gatsby-config');
+const Job = require('./src/jobs/gatsby-config');
 
 const config = {
   siteMetadata: {
@@ -10,6 +11,7 @@ const config = {
       'gatsby-plugin-styled-components',
       'gatsby-plugin-netlify',
       ...Team.plugins,
+      ...Job.plugins,
     ]),
   ],
 };

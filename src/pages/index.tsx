@@ -1,10 +1,12 @@
 import * as React from 'react';
 import styled, { injectGlobal } from 'styled-components';
+import Link from 'gatsby-link';
+
 import 'normalize.css';
 
 import Button from '../components/Button';
 import ContentWrapper from '../components/ContentWrapper';
-import Footer from '../components/Footer';
+
 import JobOffer from '../components/JobOffer';
 import Logo from '../components/Logo';
 import TeamMember from '../components/TeamMember';
@@ -19,6 +21,8 @@ const calloutBackground = require('../static/background.svg') as string;
 
 class Index extends React.Component {
   render() {
+    const { members: { edges: members }, jobOffers: { edges: jobOffers } } = this.props.data;
+
     return (
       <div>
         <Callout>
@@ -105,22 +109,24 @@ class Index extends React.Component {
 
         <ContentWrapper>
           <SectionTitle>L'equipe</SectionTitle>
+
           <TeamMemberList>
-            <TeamMember />
-            <TeamMember />
-            <TeamMember />
-            <TeamMember />
+            {members.map(({ node: { excerpt, member } }) => (
+              <TeamMember key={member.path} description={excerpt} {...member} />
+            ))}
           </TeamMemberList>
         </ContentWrapper>
 
         <ContentWrapper>
           <SectionTitle>Nous rejoindre</SectionTitle>
-          <JobOffer />
-          <JobOffer />
-          <Button>Toutes les offres</Button>
-        </ContentWrapper>
 
-        <Footer />
+          <JobOfferList>
+            {jobOffers.map(({ node: { jobOffer } }) => <JobOffer key={jobOffer.path} {...jobOffer} />)}
+          </JobOfferList>
+          <Button>
+            <Link to="/jobs">Toutes les offres</Link>
+          </Button>
+        </ContentWrapper>
       </div>
     );
   }
@@ -144,6 +150,15 @@ injectGlobal`
 		text-rendering: optimizeLegibility;
 		font-family: "Bebas", Monaco, monospace;
 	}
+
+  a {
+    color: #42aaf4;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const Callout = styled.div`
@@ -169,19 +184,10 @@ const SectionTitle = styled.h2`
   font-weight: 300;
   margin-top: 150px;
   color: #e1e1e1;
-  text-shadow:
-    0 -1px 0 #ccc,
-    0 -2px 0 #bfbfbf,
-    0 -3px 0 #9f9f9f,
-    0 -4px 0 #a6a6a6,
-    0 -5px 0 #999999,
-    0 -6px 1px rgba(0,0,0,.1),
-    0 -0 5px rgba(0,0,0,.1),
-    0 -1px 3px rgba(0,0,0,.3),
-    0 -3px 5px rgba(0,0,0,.2),
-    0 -5px 10px rgba(0,0,0,.25),
-    0 -10px 10px rgba(0,0,0,.2),
-    0 -20px 20px rgba(0,0,0,.15);
+  text-shadow: 0 -1px 0 #ccc, 0 -2px 0 #bfbfbf, 0 -3px 0 #9f9f9f, 0 -4px 0 #a6a6a6, 0 -5px 0 #999999,
+    0 -6px 1px rgba(0, 0, 0, 0.1), 0 -0 5px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.3),
+    0 -3px 5px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.2),
+    0 -20px 20px rgba(0, 0, 0, 0.15);
 `;
 
 const KnowledgeIllustration = styled.div`
@@ -228,4 +234,44 @@ const TeamMemberList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+const JobOfferList = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const pageQuery = graphql`
+  query TeamMembers {
+    members: allMarkdownRemark(
+      filter: { frontmatter: { path: { regex: "//team/" } } }
+      sort: { order: ASC, fields: [frontmatter___firstName] }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          member: frontmatter {
+            firstName
+            path
+          }
+        }
+      }
+    }
+
+    jobOffers: allMarkdownRemark(
+      filter: { frontmatter: { path: { regex: "//jobs/" } } }
+      sort: { order: ASC, fields: [frontmatter___title] }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          jobOffer: frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
+  }
 `;
