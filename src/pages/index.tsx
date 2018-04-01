@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled, { injectGlobal } from 'styled-components';
+import Link from 'gatsby-link';
 
 import 'normalize.css';
 
@@ -20,7 +21,7 @@ const calloutBackground = require('../static/background.svg') as string;
 
 class Index extends React.Component {
   render() {
-    const { edges: members } = this.props.data.allMarkdownRemark;
+    const { members: { edges: members }, jobOffers: { edges: jobOffers } } = this.props.data;
 
     return (
       <div>
@@ -110,17 +111,21 @@ class Index extends React.Component {
           <SectionTitle>L'equipe</SectionTitle>
 
           <TeamMemberList>
-            {members.map(({ node: { excerpt, frontmatter: member } }) => (
-              <TeamMember key={member.firstName} description={excerpt} {...member} />
+            {members.map(({ node: { excerpt, member } }) => (
+              <TeamMember key={member.path} description={excerpt} {...member} />
             ))}
           </TeamMemberList>
         </ContentWrapper>
 
         <ContentWrapper>
           <SectionTitle>Nous rejoindre</SectionTitle>
-          <JobOffer />
-          <JobOffer />
-          <Button>Toutes les offres</Button>
+
+          <JobOfferList>
+            {jobOffers.map(({ node: { jobOffer } }) => <JobOffer key={jobOffer.path} {...jobOffer} />)}
+          </JobOfferList>
+          <Button>
+            <Link to="/jobs">Toutes les offres</Link>
+          </Button>
         </ContentWrapper>
       </div>
     );
@@ -222,16 +227,39 @@ const TeamMemberList = styled.div`
   justify-content: center;
 `;
 
+const JobOfferList = styled.div`
+  margin-bottom: 20px;
+`;
+
 export const pageQuery = graphql`
   query TeamMembers {
-    allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___firstName] }) {
+    members: allMarkdownRemark(
+      filter: { frontmatter: { path: { regex: "//team/" } } }
+      sort: { order: ASC, fields: [frontmatter___firstName] }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)
           id
-          frontmatter {
+          member: frontmatter {
             firstName
             path
+          }
+        }
+      }
+    }
+
+    jobOffers: allMarkdownRemark(
+      filter: { frontmatter: { path: { regex: "//jobs/" } } }
+      sort: { order: ASC, fields: [frontmatter___title] }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          jobOffer: frontmatter {
+            path
+            title
           }
         }
       }

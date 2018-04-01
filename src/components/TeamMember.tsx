@@ -13,18 +13,6 @@ function TeamMember({ firstName, description }) {
   );
 }
 
-export const pageQuery = graphql`
-  query TeamMemberByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        path
-        firstName
-      }
-    }
-  }
-`;
-
 export default TeamMember;
 
 const Container = styled.div`

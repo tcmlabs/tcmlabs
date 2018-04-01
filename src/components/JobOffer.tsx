@@ -1,13 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export default function JobOffer() {
+import Link from 'gatsby-link';
+
+export default function JobOffer(props) {
+  const { title } = props;
+
   return (
     <JobOfferWrapper>
-      <Title>Offer title</Title>
-      <Excerpt>
-        This screen is visible only in development. It will not appear if the app crashes in production.
-      </Excerpt>
+      <Title>{title}</Title> · <Link to={props.path}>Voir l'offre</Link>
     </JobOfferWrapper>
   );
 }
