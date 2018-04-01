@@ -1,16 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-function TeamMember() {
+function TeamMember({ firstName, description }) {
   return (
     <Container>
       <ImagePlaceholder />
       <div>
-        <h3>Member Name</h3>
-        <p>
-          This screen is visible only in development. It will not appear if the app crashes in production. ashes in
-          production.
-        </p>
+        <h3>{firstName}</h3>
+        <p>{description}</p>
       </div>
     </Container>
   );

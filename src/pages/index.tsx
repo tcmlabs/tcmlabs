@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled, { injectGlobal } from 'styled-components';
+
 import 'normalize.css';
 
 import Button from '../components/Button';
@@ -19,6 +20,8 @@ const calloutBackground = require('../static/background.svg') as string;
 
 class Index extends React.Component {
   render() {
+    const { edges: members } = this.props.data.allMarkdownRemark;
+
     return (
       <div>
         <Callout>
@@ -105,11 +108,11 @@ class Index extends React.Component {
 
         <ContentWrapper>
           <SectionTitle>L'equipe</SectionTitle>
+
           <TeamMemberList>
-            <TeamMember />
-            <TeamMember />
-            <TeamMember />
-            <TeamMember />
+            {members.map(({ node: { excerpt, frontmatter: member } }) => (
+              <TeamMember key={member.firstName} description={excerpt} {...member} />
+            ))}
           </TeamMemberList>
         </ContentWrapper>
 
@@ -169,19 +172,10 @@ const SectionTitle = styled.h2`
   font-weight: 300;
   margin-top: 150px;
   color: #e1e1e1;
-  text-shadow:
-    0 -1px 0 #ccc,
-    0 -2px 0 #bfbfbf,
-    0 -3px 0 #9f9f9f,
-    0 -4px 0 #a6a6a6,
-    0 -5px 0 #999999,
-    0 -6px 1px rgba(0,0,0,.1),
-    0 -0 5px rgba(0,0,0,.1),
-    0 -1px 3px rgba(0,0,0,.3),
-    0 -3px 5px rgba(0,0,0,.2),
-    0 -5px 10px rgba(0,0,0,.25),
-    0 -10px 10px rgba(0,0,0,.2),
-    0 -20px 20px rgba(0,0,0,.15);
+  text-shadow: 0 -1px 0 #ccc, 0 -2px 0 #bfbfbf, 0 -3px 0 #9f9f9f, 0 -4px 0 #a6a6a6, 0 -5px 0 #999999,
+    0 -6px 1px rgba(0, 0, 0, 0.1), 0 -0 5px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.3),
+    0 -3px 5px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.2),
+    0 -20px 20px rgba(0, 0, 0, 0.15);
 `;
 
 const KnowledgeIllustration = styled.div`
@@ -228,4 +222,21 @@ const TeamMemberList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+export const pageQuery = graphql`
+  query TeamMembers {
+    allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___firstName] }) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          frontmatter {
+            firstName
+            path
+          }
+        }
+      }
+    }
+  }
 `;
