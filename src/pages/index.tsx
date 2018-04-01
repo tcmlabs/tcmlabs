@@ -150,6 +150,15 @@ injectGlobal`
 		text-rendering: optimizeLegibility;
 		font-family: "Bebas", Monaco, monospace;
 	}
+
+  a {
+    color: #42aaf4;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const Callout = styled.div`
