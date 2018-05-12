@@ -15,6 +15,7 @@ const fields = [
     component: Input,
     props: {
       type: 'text',
+      required: true,
     },
   },
   {
@@ -23,6 +24,7 @@ const fields = [
     component: Input,
     props: {
       type: 'text',
+      required: true,
     },
   },
   {
@@ -31,6 +33,7 @@ const fields = [
     component: Input,
     props: {
       type: 'email',
+      required: true,
     },
   },
   {
@@ -40,6 +43,7 @@ const fields = [
     props: {
       cols: 40,
       rows: 8,
+      required: true,
     },
   },
 ];
