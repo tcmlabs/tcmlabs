@@ -32,7 +32,6 @@ class Index extends React.Component {
             <a href={`#${FORM_NAME}`}>
               <Button>Rejoignez-nous</Button>
             </a>
-            <Button>Contactez-nous</Button>
           </ContentWrapper>
         </Callout>
 
