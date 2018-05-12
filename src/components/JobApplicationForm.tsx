@@ -45,11 +45,9 @@ const fields = [
 ];
 
 export default () => (
-  <form name={FORM_NAME} method="POST" data-netlify netlify-honeypot={BOT_FIELD}>
-    <BotField>
-      <label>Don’t fill this out if you're human:</label>
-      <input name={BOT_FIELD} />
-    </BotField>
+  <form name={FORM_NAME} method="POST" data-netlify data-netlify-honeypot={BOT_FIELD}>
+    <input type="hidden" name={BOT_FIELD} />
+
     {fields.map(({ component, props, label }) => (
       <FieldWrapper>
         <Label>{label}:</Label>
@@ -62,10 +60,6 @@ export default () => (
     </FieldWrapper>
   </form>
 );
-
-const BotField = styled.div`
-  display: none;
-`;
 
 const FieldWrapper = styled.div`
   margin-top: 16px;
