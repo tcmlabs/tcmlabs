@@ -48,10 +48,10 @@ export default () => (
   <form name={FORM_NAME} method="POST" data-netlify data-netlify-honeypot={BOT_FIELD}>
     <input type="hidden" name={BOT_FIELD} />
 
-    {fields.map(({ component, props, label }) => (
+    {fields.map(({ name, component, props, label }) => (
       <FieldWrapper>
         <Label>{label}:</Label>
-        {React.createElement(component, props)}
+        {React.createElement(component, { name, ...props })}
       </FieldWrapper>
     ))}
 
