@@ -56,7 +56,7 @@ export default () => (
     ))}
 
     <FieldWrapper>
-      <button type="submit">Send</button>
+      <button type="submit">Envoyer</button>
     </FieldWrapper>
   </form>
 );
