@@ -43,95 +43,6 @@ class Index extends React.Component {
             <JobApplicationForm />
           </FormWrapper>
         </ContentWrapper>
-
-        <ContentWrapper>
-          <SectionTitle>Savoir-faire</SectionTitle>
-
-          <KnowledgeSection>
-            <KnowledgeIllustration backgroundImage={cloudIllustration} />
-            <div>
-              <KnowledgeTitle>Cloud</KnowledgeTitle>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <ClientLogo src={logoBnp} />
-            </div>
-          </KnowledgeSection>
-
-          <KnowledgeSection>
-            <KnowledgeIllustration backgroundImage={devopsIllustration} />
-            <div>
-              <KnowledgeTitle>Devops</KnowledgeTitle>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <ClientLogo src={logoBnp} />
-            </div>
-          </KnowledgeSection>
-
-          <KnowledgeSection>
-            <KnowledgeIllustration backgroundImage={webdevIllustration} />
-            <div>
-              <KnowledgeTitle>WebDev</KnowledgeTitle>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <ClientLogo src={logoBnp} />
-            </div>
-          </KnowledgeSection>
-
-          <KnowledgeSection>
-            <KnowledgeIllustration backgroundImage={dataIllustration} />
-            <div>
-              <KnowledgeTitle>Data</KnowledgeTitle>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <ClientLogo src={logoBnp} />
-              <ClientLogo src={logoBnp} />
-              <ClientLogo src={logoBnp} />
-            </div>
-          </KnowledgeSection>
-        </ContentWrapper>
-
-        <ContentWrapper>
-          <SectionTitle>L'equipe</SectionTitle>
-          <TeamMemberList>
-            <TeamMember />
-            <TeamMember />
-            <TeamMember />
-            <TeamMember />
-          </TeamMemberList>
-        </ContentWrapper>
-
-        <ContentWrapper>
-          <SectionTitle>Nous rejoindre</SectionTitle>
-          <JobOffer />
-          <JobOffer />
-          <Button>Toutes les offres</Button>
-        </ContentWrapper>
-
-        <Footer />
       </div>
     );
   }
@@ -235,4 +146,5 @@ const TeamMemberList = styled.div`
 const FormWrapper = styled.div`
   margin: 0px auto;
   width: 60%;
+  margin-bottom: 100px;
 `;
