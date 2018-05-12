@@ -49,7 +49,7 @@ const fields = [
 ];
 
 export default () => (
-  <form name={FORM_NAME} method="POST" data-netlify data-netlify-honeypot={BOT_FIELD}>
+  <form name={FORM_NAME} method="POST" action="/jobs/thanks" data-netlify data-netlify-honeypot={BOT_FIELD}>
     <input type="hidden" name={BOT_FIELD} />
 
     {fields.map(({ name, component, props, label }) => (
