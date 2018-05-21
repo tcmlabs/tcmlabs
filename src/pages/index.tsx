@@ -72,8 +72,16 @@ const Callout = styled.div`
 		url('${calloutBackground}');
 	background-size: 100%, 30%;
   text-align: center;
-	padding: 240px 0;
+  padding-top: 50px;
+  padding-bottom: 100px;
+
 	color: #ffffff;
+
+  @media (min-width: 768px) {
+    padding-top: 240px;
+    padding-bottom: 240px;
+  }
+
 `;
 
 const Introduction = styled.p`
@@ -82,15 +90,20 @@ const Introduction = styled.p`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 90px;
+  font-size: 30px;
   text-align: center;
   font-weight: 300;
-  margin-top: 150px;
+  margin-top: 50px;
   color: #e1e1e1;
-  text-shadow: 0 -1px 0 #ccc, 0 -2px 0 #bfbfbf, 0 -3px 0 #9f9f9f, 0 -4px 0 #a6a6a6, 0 -5px 0 #999999,
+  text-shadow: 0 -1px 0 #ccc, 0 -2px 0 #bfbfbf, 0 -3px 0 #9f9f9f, 0 -4px 0 #a6a6a6, 0 -1px 0 #999999,
     0 -6px 1px rgba(0, 0, 0, 0.1), 0 -0 5px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.3),
     0 -3px 5px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.2),
     0 -20px 20px rgba(0, 0, 0, 0.15);
+
+  @media (min-width: 768px) {
+    font-size: 90px;
+    margin-top: 150px;
+  }
 `;
 
 const KnowledgeIllustration = styled.div`
@@ -141,6 +154,10 @@ const TeamMemberList = styled.div`
 
 const FormWrapper = styled.div`
   margin: 0px auto;
-  width: 60%;
+  width: 80%;
   margin-bottom: 100px;
+
+  @media (min-width: 768px) {
+    width: 60%;
+  }
 `;

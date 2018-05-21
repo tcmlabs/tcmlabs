@@ -5,11 +5,26 @@ export const FORM_NAME = 'job';
 const BOT_FIELD = 'bot-field';
 
 const TextInput = styled.input`
-  width: 300px;
+  box-sizing: border-box;
+  width: 100%;
 `;
 
 const FileInput = styled.input`
-  width: 400px;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  color: #000;
+`;
+
+const MultilineInput = styled.textarea`
+  box-sizing: border-box;
+  width: 100%;
+`;
+
+const SubmitButton = styled.button`
+  background: #fff;
+  border: none;
+  padding: 4px 10px;
 `;
 
 const fields = [
@@ -64,7 +79,7 @@ const fields = [
   {
     name: 'message',
     label: 'Message',
-    component: 'textarea',
+    component: MultilineInput,
     props: {
       cols: 40,
       rows: 8,
@@ -88,7 +103,7 @@ export default () => (
     ))}
 
     <FieldWrapper>
-      <button type="submit">Envoyer</button>
+      <SubmitButton type="submit">Envoyer</SubmitButton>
     </FieldWrapper>
   </form>
 );
