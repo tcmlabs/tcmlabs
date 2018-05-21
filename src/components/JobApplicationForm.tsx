@@ -79,7 +79,10 @@ export default () => (
 
     {fields.map(({ name, component, props, label }) => (
       <FieldWrapper>
-        <Label>{label}:</Label>
+        <Label>
+          {label}
+          {props.required ? ' *' : null}
+        </Label>
         {React.createElement(component, { name, ...props })}
       </FieldWrapper>
     ))}
