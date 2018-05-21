@@ -4,15 +4,19 @@ import styled from 'styled-components';
 export const FORM_NAME = 'job';
 const BOT_FIELD = 'bot-field';
 
-const Input = styled.input`
+const TextInput = styled.input`
   width: 300px;
+`;
+
+const FileInput = styled.input`
+  width: 400px;
 `;
 
 const fields = [
   {
     name: 'firstName',
     label: 'Prénom',
-    component: Input,
+    component: TextInput,
     props: {
       type: 'text',
       required: true,
@@ -21,7 +25,7 @@ const fields = [
   {
     name: 'lastName',
     label: 'Nom',
-    component: Input,
+    component: TextInput,
     props: {
       type: 'text',
       required: true,
@@ -30,10 +34,20 @@ const fields = [
   {
     name: 'email',
     label: 'Email',
-    component: Input,
+    component: TextInput,
     props: {
       type: 'email',
       required: true,
+    },
+  },
+  {
+    name: 'attachment',
+    label: 'CV',
+    component: FileInput,
+    props: {
+      type: 'file',
+      required: false,
+      accept: '.doc,.docx,.pdf,.md,.markdown,.txt',
     },
   },
   {
