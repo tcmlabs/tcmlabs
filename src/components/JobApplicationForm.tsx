@@ -51,6 +51,17 @@ const fields = [
     },
   },
   {
+    name: 'link',
+    label: 'Lien',
+    component: TextInput,
+    props: {
+      type: 'text',
+      required: false,
+      placeholder: 'LinkedIn, Github, etc.',
+    },
+  },
+
+  {
     name: 'message',
     label: 'Message',
     component: 'textarea',
