@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import JobOffer from '../components/JobOffer';
 import Logo from '../components/Logo';
 import TeamMember from '../components/TeamMember';
+import JobApplicationForm, { FORM_NAME } from '../components/JobApplicationForm';
 
 const cloudIllustration = require('../static/cloud.svg') as string;
 const webdevIllustration = require('../static/webdev.svg') as string;
@@ -24,103 +25,20 @@ class Index extends React.Component {
         <Callout>
           <ContentWrapper>
             <Logo />
-            <Introduction>
-              Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-              year and let me wish you all the best in 2018! #danceallnight #nylounge
-            </Introduction>
-            <Button>Rejoignez-nous</Button>
-            <Button>Contactez-nous</Button>
+            <Introduction>IT expertise out of the jungle.</Introduction>
+            <a href={`#${FORM_NAME}`}>
+              <Button>Rejoignez-nous</Button>
+            </a>
           </ContentWrapper>
         </Callout>
 
-        <ContentWrapper>
-          <SectionTitle>Savoir-faire</SectionTitle>
+        <ContentWrapper id={FORM_NAME}>
+          <SectionTitle>Join the labs</SectionTitle>
 
-          <KnowledgeSection>
-            <KnowledgeIllustration backgroundImage={cloudIllustration} />
-            <div>
-              <KnowledgeTitle>Cloud</KnowledgeTitle>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <ClientLogo src={logoBnp} />
-            </div>
-          </KnowledgeSection>
-
-          <KnowledgeSection>
-            <KnowledgeIllustration backgroundImage={devopsIllustration} />
-            <div>
-              <KnowledgeTitle>Devops</KnowledgeTitle>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <ClientLogo src={logoBnp} />
-            </div>
-          </KnowledgeSection>
-
-          <KnowledgeSection>
-            <KnowledgeIllustration backgroundImage={webdevIllustration} />
-            <div>
-              <KnowledgeTitle>WebDev</KnowledgeTitle>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <ClientLogo src={logoBnp} />
-            </div>
-          </KnowledgeSection>
-
-          <KnowledgeSection>
-            <KnowledgeIllustration backgroundImage={dataIllustration} />
-            <div>
-              <KnowledgeTitle>Data</KnowledgeTitle>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <p>
-                Something for your mind, your body and your soul! Stay See tradition continues for the last day of the
-                year and let me wish you all the best in 2018! #danceallnight #nylounge
-              </p>
-              <ClientLogo src={logoBnp} />
-              <ClientLogo src={logoBnp} />
-              <ClientLogo src={logoBnp} />
-            </div>
-          </KnowledgeSection>
+          <FormWrapper>
+            <JobApplicationForm />
+          </FormWrapper>
         </ContentWrapper>
-
-        <ContentWrapper>
-          <SectionTitle>L'equipe</SectionTitle>
-          <TeamMemberList>
-            <TeamMember />
-            <TeamMember />
-            <TeamMember />
-            <TeamMember />
-          </TeamMemberList>
-        </ContentWrapper>
-
-        <ContentWrapper>
-          <SectionTitle>Nous rejoindre</SectionTitle>
-          <JobOffer />
-          <JobOffer />
-          <Button>Toutes les offres</Button>
-        </ContentWrapper>
-
-        <Footer />
       </div>
     );
   }
@@ -154,7 +72,7 @@ const Callout = styled.div`
 		url('${calloutBackground}');
 	background-size: 100%, 30%;
   text-align: center;
-	padding: 	200px 0;
+	padding: 240px 0;
 	color: #ffffff;
 `;
 
@@ -169,19 +87,10 @@ const SectionTitle = styled.h2`
   font-weight: 300;
   margin-top: 150px;
   color: #e1e1e1;
-  text-shadow:
-    0 -1px 0 #ccc,
-    0 -2px 0 #bfbfbf,
-    0 -3px 0 #9f9f9f,
-    0 -4px 0 #a6a6a6,
-    0 -5px 0 #999999,
-    0 -6px 1px rgba(0,0,0,.1),
-    0 -0 5px rgba(0,0,0,.1),
-    0 -1px 3px rgba(0,0,0,.3),
-    0 -3px 5px rgba(0,0,0,.2),
-    0 -5px 10px rgba(0,0,0,.25),
-    0 -10px 10px rgba(0,0,0,.2),
-    0 -20px 20px rgba(0,0,0,.15);
+  text-shadow: 0 -1px 0 #ccc, 0 -2px 0 #bfbfbf, 0 -3px 0 #9f9f9f, 0 -4px 0 #a6a6a6, 0 -5px 0 #999999,
+    0 -6px 1px rgba(0, 0, 0, 0.1), 0 -0 5px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.3),
+    0 -3px 5px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.2),
+    0 -20px 20px rgba(0, 0, 0, 0.15);
 `;
 
 const KnowledgeIllustration = styled.div`
@@ -228,4 +137,10 @@ const TeamMemberList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+const FormWrapper = styled.div`
+  margin: 0px auto;
+  width: 60%;
+  margin-bottom: 100px;
 `;

@@ -7,9 +7,11 @@ export default styled.button`
   background-color: #142d3d;
   padding: 10px 25px;
   cursor: pointer;
-  & + button {
+
+  & + & {
     margin-left: 10px;
   }
+
   &:hover {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 5px 12px rgba(0, 0, 0, 0.28);
     color: #ffffff;
