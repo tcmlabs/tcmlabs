@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Helmet from 'react-helmet';
 import styled, { injectGlobal } from 'styled-components';
 import 'normalize.css';
 
@@ -22,23 +23,27 @@ class Index extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <script async type="text/javascript">
+            {`!function () {
+              if (window.JOINUP_WIDGET_ID) {
+                console.warn("JoinUp snippet included twice");
+              } else {
+                window.JOINUP_WIDGET_ID = "2795b2ff-12be-4136-8850-84ee0c1e7552";
+                var n, o;
+                o = document.createElement("script");
+                o.src = "https://js.joinup.io/init.js", o.defer = !0, o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous";
+                n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+              }
+            }()`}
+          </script>
+        </Helmet>
         <Callout>
           <ContentWrapper>
             <Logo />
             <Introduction>IT expertise out of the jungle.</Introduction>
-            <a href={`#${FORM_NAME}`}>
-              <Button>Rejoignez-nous</Button>
-            </a>
           </ContentWrapper>
         </Callout>
-
-        <ContentWrapper id={FORM_NAME}>
-          <SectionTitle>Join the labs</SectionTitle>
-
-          <FormWrapper>
-            <JobApplicationForm />
-          </FormWrapper>
-        </ContentWrapper>
       </div>
     );
   }
