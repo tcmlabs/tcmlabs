@@ -1,4 +1,4 @@
-# Reusing GraphQL types to type check React Component props using TypeScript
+# Reusing GraphQL types to type check Apollo queries and React Component using TypeScript
 
 
 When developing a universal application for one of our client, we wanted to enjoy type safety not only when interacting with our GraphQL server, but also when writing GraphQL queries used by our React components.
