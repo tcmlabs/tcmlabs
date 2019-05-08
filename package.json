@@ -9,7 +9,8 @@
   "scripts": {
     "start": "gatsby develop",
     "develop": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "test": "jest"
   },
   "dependencies": {
     "gatsby": "^1.9.231",
@@ -25,6 +26,8 @@
     "typescript": "^2.7.2"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "jest": "^24.8.0",
     "prettier": "^1.17.0"
   }
 }
