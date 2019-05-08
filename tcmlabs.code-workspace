@@ -4,5 +4,48 @@
       "name": "tcmlabs",
       "path": "."
     }
-  ]
+  ],
+  "extensions": {
+    "recommendations": [
+      // General tooling
+      "editorconfig.editorconfig",
+      "mikestead.dotenv",
+
+      // Intelli*
+      "christian-kohler.path-intellisense",
+      "visualstudioexptteam.vscodeintellicode",
+
+      // Bash
+      "timonwong.shellcheck",
+
+      // JavaScript
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "formulahendry.auto-rename-tag",
+      "jpoissonnier.vscode-styled-components",
+      "orta.vscode-jest",
+      "xabikos.javascriptsnippets",
+
+      // Typescript
+      "ms-vscode.vscode-typescript-tslint-plugin",
+
+      // npm
+      "christian-kohler.npm-intellisense",
+      "eg2.vscode-npm-script",
+
+      // Python
+      "cameron.vscode-pytest",
+      "ms-python.python",
+
+      // GraphQL
+      "kumar-harsh.graphql-for-vscode",
+
+      // Markdown
+      "bierner.markdown-emoji",
+      "silvenon.mdx",
+
+      // Yaml
+      "redhat.vscode-yaml"
+    ]
+  }
 }
