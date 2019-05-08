@@ -1,6 +1,9 @@
 {
   "folders": [
     {
+      "path": "tcmlabs.fr"
+    },
+    {
       "name": "tcmlabs",
       "path": "."
     }
