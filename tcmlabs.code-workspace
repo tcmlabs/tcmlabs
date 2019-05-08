@@ -10,6 +10,9 @@
   ],
   "extensions": {
     "recommendations": [
+      // Nix
+      "bbenoist.nix",
+
       // General tooling
       "editorconfig.editorconfig",
       "mikestead.dotenv",
