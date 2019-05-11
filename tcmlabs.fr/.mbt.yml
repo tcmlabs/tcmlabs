@@ -1,0 +1,4 @@
+name: tcmlabs.fr
+build:
+  default: yarn
+  args: ['build']
