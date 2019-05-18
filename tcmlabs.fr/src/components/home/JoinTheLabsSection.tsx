@@ -1,8 +1,8 @@
 import * as React from 'react';
 
+import Button from '../Button';
 import ContentWrapper from '../ContentWrapper';
 import JobOffer from '../JobOffer';
-import Button from '../Button';
 import { SectionTitle } from '../SectionTitle';
 
 const JoinTheLabsSection = (): React.FunctionComponentElement<{}> => (

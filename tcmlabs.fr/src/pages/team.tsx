@@ -1,6 +1,6 @@
-import * as React from 'react';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
+import * as React from 'react';
 
 class Team extends React.Component {
   render(): React.ReactNode {

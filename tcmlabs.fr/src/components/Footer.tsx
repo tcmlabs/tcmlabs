@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+
 import ContentWrapper from './ContentWrapper';
 
 export default function Footer(): React.FunctionComponentElement<{}> {

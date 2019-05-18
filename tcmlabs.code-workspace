@@ -25,6 +25,7 @@
       "timonwong.shellcheck",
 
       // JavaScript
+      "amatiasq.sort-imports",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
       "formulahendry.auto-rename-tag",
@@ -53,5 +54,8 @@
       // Yaml
       "redhat.vscode-yaml"
     ]
+  },
+  "settings": {
+    "sort-imports.default-sort-style": "module"
   }
 }
