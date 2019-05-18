@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true // Ensure we still format config files in root folder
   },
   "[javascriptreact]": {
     "editor.formatOnSave": false
