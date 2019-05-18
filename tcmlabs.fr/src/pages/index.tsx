@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
 import 'normalize.css';
 
 import Button from '../components/Button';
@@ -23,6 +24,7 @@ class Index extends React.Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Helmet>
           <script async type="text/javascript">
             {`!function () {
@@ -51,7 +53,7 @@ class Index extends React.Component {
 
 export default Index;
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
 	body {
 		font-family: Menlo, "Courier New", monospace;
 		font-size: 16px;
