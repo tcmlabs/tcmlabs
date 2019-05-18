@@ -1,20 +1,21 @@
 import * as React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
-function TeamMember() {
+const TeamMember = (): React.FunctionComponentElement<{}> => {
   return (
     <Container>
       <ImagePlaceholder />
       <div>
         <h3>Member Name</h3>
         <p>
-          This screen is visible only in development. It will not appear if the app crashes in production. ashes in
+          This screen is visible only in development. It will not appear if the app crashes in
           production.
         </p>
       </div>
     </Container>
   );
-}
+};
 
 export const pageQuery = graphql`
   query TeamMemberByPath($path: String!) {

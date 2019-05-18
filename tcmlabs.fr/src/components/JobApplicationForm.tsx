@@ -88,12 +88,18 @@ const fields = [
   },
 ];
 
-export default () => (
-  <form name={FORM_NAME} method="POST" action="/jobs/thanks" data-netlify data-netlify-honeypot={BOT_FIELD}>
+const JobApplicationForm = (): React.FunctionComponentElement<{}> => (
+  <form
+    name={FORM_NAME}
+    method="POST"
+    action="/jobs/thanks"
+    data-netlify
+    data-netlify-honeypot={BOT_FIELD}
+  >
     <input type="hidden" name={BOT_FIELD} />
 
     {fields.map(({ name, component, props, label }) => (
-      <FieldWrapper>
+      <FieldWrapper key={name}>
         <Label>
           {label}
           {props.required ? ' *' : null}
@@ -107,6 +113,8 @@ export default () => (
     </FieldWrapper>
   </form>
 );
+
+export default JobApplicationForm;
 
 const FieldWrapper = styled.div`
   margin-top: 16px;

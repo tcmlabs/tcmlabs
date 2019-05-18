@@ -1,12 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export default function JobOffer() {
+export default function JobOffer(): React.FunctionComponentElement<{}> {
   return (
     <JobOfferWrapper>
       <Title>Offer title</Title>
       <Excerpt>
-        This screen is visible only in development. It will not appear if the app crashes in production.
+        This screen is visible only in development. It will not appear if the app crashes in
+        production.
       </Excerpt>
     </JobOfferWrapper>
   );
