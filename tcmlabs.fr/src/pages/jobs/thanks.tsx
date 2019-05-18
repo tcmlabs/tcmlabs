@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
 
-export default () => (
+const ThanksPage = (): React.FunctionComponentElement<{}> => (
   <div>
     <ContentWrapper>
       <Logo />
@@ -14,6 +14,8 @@ export default () => (
     </ContentWrapper>
   </div>
 );
+
+export default ThanksPage;
 
 const ContentWrapper = styled.div`
   max-width: 1200px;

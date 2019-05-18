@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.button`
+const Button = styled.button`
   border: 2px solid #bdc7d6;
   border-radius: 3px;
   color: #bdc7d6;
@@ -20,3 +20,5 @@ export default styled.button`
     outline: none;
   }
 `;
+
+export default Button;

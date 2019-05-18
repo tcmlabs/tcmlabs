@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 
 class Team extends React.Component {
-  render() {
+  render(): React.ReactNode {
     const { edges: members } = this.props.data.allMarkdownRemark;
 
     return (
