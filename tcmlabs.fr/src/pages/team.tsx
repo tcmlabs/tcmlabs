@@ -2,7 +2,9 @@ import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import * as React from 'react';
 
-class Team extends React.Component {
+import * as Types from '../graphqlTypes';
+
+class Team extends React.Component<{ data: Types.TeamMemberQuery }> {
   render(): React.ReactNode {
     const { edges: members } = this.props.data.allMarkdownRemark;
 
@@ -25,7 +27,7 @@ class Team extends React.Component {
 export default Team;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query TeamMember {
     allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___firstName] }) {
       edges {
         node {
