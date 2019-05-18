@@ -7,12 +7,13 @@
   "repository": "git@github.com:tcmlabs/tcmlabs.fr.git",
   "author": "TCM Labs",
   "scripts": {
-    "dev": "yarn start",
+    "dev": "concurrently --restart-tries=3 --restart-after=1000 \"npm:gatsby-dev\" \"npm:graphql-types-watch\"",
+    "gatsby-dev": "yarn start",
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "test": "jest",
-    "graphql-types": "graphql-codegen"
+    "graphql-types-watch": "graphql-codegen --watch"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -41,6 +42,7 @@
     "@types/styled-components": "^4.1.15",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
+    "concurrently": "^4.1.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
