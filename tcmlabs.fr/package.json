@@ -7,6 +7,7 @@
   "repository": "git@github.com:tcmlabs/tcmlabs.fr.git",
   "author": "TCM Labs",
   "scripts": {
+    "dev": "yarn start",
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
