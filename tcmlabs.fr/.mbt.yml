@@ -1,4 +1,4 @@
 name: tcmlabs.fr
 build:
-  default: yarn
-  args: ['build']
+  default:
+    cmd: bin/build.sh
