@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export default function JobOffer(): React.FunctionComponentElement<{}> {
+const JobOffer: React.FunctionComponent = () => {
   return (
     <JobOfferWrapper>
       <Title>Offer title</Title>
@@ -11,7 +11,9 @@ export default function JobOffer(): React.FunctionComponentElement<{}> {
       </Excerpt>
     </JobOfferWrapper>
   );
-}
+};
+
+export default JobOffer;
 
 const JobOfferWrapper = styled.div``;
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import ContentWrapper from './ContentWrapper';
 
-export default function Footer(): React.FunctionComponentElement<{}> {
+const Footer: React.FunctionComponent = () => {
   return (
     <FooterWrapper>
       <ContentWrapper>
@@ -25,7 +25,9 @@ export default function Footer(): React.FunctionComponentElement<{}> {
       </ContentWrapper>
     </FooterWrapper>
   );
-}
+};
+
+export default Footer;
 
 const FooterWrapper = styled.div`
   display: flex;

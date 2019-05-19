@@ -5,7 +5,7 @@ import ContentWrapper from '../ContentWrapper';
 import JobOffer from '../JobOffer';
 import { SectionTitle } from '../SectionTitle';
 
-const JoinTheLabsSection = (): React.FunctionComponentElement<{}> => (
+const JoinTheLabsSection: React.FunctionComponent = () => (
   <ContentWrapper>
     <SectionTitle>Nous rejoindre</SectionTitle>
     <JobOffer />

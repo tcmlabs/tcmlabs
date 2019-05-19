@@ -88,7 +88,7 @@ const fields = [
   },
 ];
 
-const JobApplicationForm = (): React.FunctionComponentElement<{}> => (
+const JobApplicationForm: React.FunctionComponent = () => (
   <form
     name={FORM_NAME}
     method="POST"

@@ -5,7 +5,7 @@ import ContentWrapper from '../ContentWrapper';
 import { SectionTitle } from '../SectionTitle';
 import TeamMember from '../TeamMember';
 
-const TeamSection = (): React.FunctionComponentElement<{}> => (
+const TeamSection: React.FunctionComponent = () => (
   <ContentWrapper>
     <SectionTitle>{"L'equipe"}</SectionTitle>
     <TeamMemberList>

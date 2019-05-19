@@ -11,7 +11,7 @@ const dataIllustration = require('../static/data.svg') as string;
 
 const logoBnp = require('../components/customers/logo-bnpparibas.svg') as string;
 
-const WhatWeDoSection = (): React.FunctionComponentElement<{}> => (
+const WhatWeDoSection: React.FunctionComponent = () => (
   <ContentWrapper>
     <SectionTitle>Savoir-faire</SectionTitle>
 

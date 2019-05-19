@@ -29,6 +29,7 @@ module.exports = {
       'error',
       {
         allowExpressions: true,
+        allowTypedFunctionExpressions: true,
       },
     ],
     'react/prop-types': ['off'],

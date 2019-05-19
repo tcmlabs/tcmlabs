@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 import styled from 'styled-components';
 
-const TeamMember = (): React.FunctionComponentElement<{}> => {
+const TeamMember: React.FunctionComponent = () => {
   return (
     <Container>
       <ImagePlaceholder />

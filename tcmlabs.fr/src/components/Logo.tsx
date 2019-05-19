@@ -1,14 +1,16 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export default function Logo(): React.FunctionComponentElement<{}> {
+const Logo: React.FunctionComponent = () => {
   return (
     <LogoWrapper>
       TCM<Labs>Labs</Labs>
       <Baseline>cloud · devOps · WebDev · data</Baseline>
     </LogoWrapper>
   );
-}
+};
+
+export default Logo;
 
 const LogoWrapper = styled.h1`
   font-size: 80px;
