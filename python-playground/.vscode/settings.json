@@ -2,5 +2,10 @@
   "editor.formatOnSave": true,
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
-  "python.pythonPath": ".venv/bin/python3"
+  "python.pythonPath": ".venv/bin/python3",
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.pyTestArgs": ["src"],
+  "python.testing.pyTestEnabled": true,
+  "python.testing.unittestEnabled": false
 }
