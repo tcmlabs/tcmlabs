@@ -16,6 +16,7 @@
       // General tooling
       "editorconfig.editorconfig",
       "mikestead.dotenv",
+      "Shan.code-settings-sync",
 
       // Intelli*
       "christian-kohler.path-intellisense",
