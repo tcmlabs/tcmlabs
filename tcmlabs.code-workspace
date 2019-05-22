@@ -4,6 +4,9 @@
       "path": "tcmlabs.fr"
     },
     {
+      "path": "python-playground"
+    },
+    {
       "name": "tcmlabs",
       "path": "."
     }
