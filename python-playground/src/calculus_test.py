@@ -11,7 +11,12 @@ def test_addition():
     assert add(2, 3) == 5
 
 
-some_additions = [((3, 5), 8), ((2, 4), 6), ((6, 9), 15)]
+some_additions = [
+    #
+    ((3, 5), 8),
+    ((2, 4), 6),
+    ((6, 9), 15),
+]
 
 
 @pytest.mark.parametrize("test_input,expected", some_additions)
