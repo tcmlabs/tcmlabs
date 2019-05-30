@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "python.autoComplete.extraPaths": ["src"], // Allow VS Code to resolve from there
+  "python.autoComplete.extraPaths": ["src"], // Allow VS Code to also resolve imports from there when editing files, fixing missing package errors
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
   "python.pythonPath": ".venv/bin/python3",
