@@ -2,11 +2,19 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
-    "noImplicitAny": true,
+
     "module": "commonjs",
     "target": "esnext",
     "jsx": "react",
-    "lib": ["dom", "es2015", "es2017"]
+
+    "allowJs": true, // Process & infer types from .js files.
+    "noEmit": true, // Don't emit; allow Babel to transform files.
+    "strict": true, // enables --noImplicitAny, --noImplicitThis, --alwaysStrict, --strictBindCallApply, --strictNullChecks, --strictFunctionTypes and --strictPropertyInitialization
+    "baseUrl": "./src",
+    "paths": {
+      "#components/*": ["components/*"],
+      "#tcmlabs.fr/*": ["*"]
+    }
   },
-  "include": ["./src/**/*"]
+  "include": ["src/**/*"]
 }
