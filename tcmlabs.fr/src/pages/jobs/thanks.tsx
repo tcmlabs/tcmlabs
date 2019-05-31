@@ -1,8 +1,8 @@
+import Logo from '#components/Logo';
 import * as React from 'react';
 import styled from 'styled-components';
 
 import Button from '../../components/Button';
-import Logo from '../../components/Logo';
 
 const ThanksPage: React.FunctionComponent = () => (
   <div>
