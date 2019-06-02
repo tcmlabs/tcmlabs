@@ -41,5 +41,5 @@ def test_addition_associativity(a, b, c):
 
 
 @given(positive_integers)
-def test_addition_neutral_element(a):
-    assert add(a, 0) == a
+def test_addition_additive_identity(a):
+    assert add(a, 0) == a == add(0, a)
