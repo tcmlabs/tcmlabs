@@ -198,8 +198,8 @@ def test_addition_associativity(a, b, c):
     assert add(a, add(b, c)) == add(add(a, b), c)
 
 @given(integers())
-def test_addition_neutral_element(a):
-    assert add(a, 0) == a == add(0, a)  # TODO: check this
+def test_addition_additive_identity(a):
+    assert add(a, 0) == a == add(0, a)
 ```
 
 What the Hypothesis library does is generate thousand of random values, pass these values to the test functions, and help us detect values for which some properties of addition implementation no longer hold true by narrowing values until it finds one for which the test certainly fails.
@@ -214,10 +214,11 @@ Some behavior cannot be enforced at build time in Python, simply because the val
 
 For this, a programmer can use [PyComb](https://github.com/fcracker79/pycomb), a Python type combinator library which happens to be a port of the [tcomb](https://github.com/gcanti/tcomb) JavaScript type combinator library.
 
-Type combinators, amongst other things, help us define subset of types which correspond to values that match a certain predicate.
+Type combinators, amongst other things, help us define subset of types which correspond to values that match a specific predicate.
 
 ```python
 from pycomb import combinators
+from pycomb.decorators import returning
 
 def is_positive(x: int) -> bool:
     return x >= 0
@@ -228,9 +229,12 @@ def is_integer(x: int) -> bool:
 def is_natural(x: int) -> bool:
     return is_positive(x) and is_integer(x)
 
-natural_numbers = combinators.subtype(combinator.Int, is_natural)
+natural_numbers = combinators.subtype(
+    combinators.Int, is_natural, example=42, name="Natural number"
+)
 
-@combinators.function(natural_numbers, natural_numbers) # TODO: check this
+@combinators.function(natural_numbers, natural_numbers)
+@returning(natural_numbers)
 def add(a: int, b: int) -> int:
     return a + b
 ```
@@ -240,9 +244,8 @@ def add(a: int, b: int) -> int:
 The function will behave this way at run time:
 
 ```python
-# TODO: check this
 add(2, 3)     # OK
-add(2, 3.5)   # Fails
+add(2, 3.5)   # Fails with "Error on Natural number: expected Natural number but was int"
 ```
 
 What we've done here is turn business expectations into [predicates](https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)) (functions returning booleans). These functions could now also be type-checked, tested and re-used elsewhere in our program, avoiding a lot of code duplication.
