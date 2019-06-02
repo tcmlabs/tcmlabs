@@ -1,6 +1,6 @@
 # Enforcing business invariants in Python: type-checking, property-based testing and type combinators
 
-An application, or "program", is a set of instructions given to a computer. This program is expected to behave in a certain way, that is, closely follow a set of strict business expectations, or invariants.
+An application, or "program", is a set of instructions given to a computer. This program is expected to behave in a very specific way, that is, closely follow a set of strict business expectations, or invariants.
 
 This article highlights the common tools we use at TCM Labs to enforce code quality in the programs that we ship to our customers. We often work with data scientists and data engineers, so examples will be given in the Python programming language.
 
@@ -65,7 +65,7 @@ Some of the benefits of type hints:
 
 To enable type checking in the IDE, we use [flake8](http://flake8.pycqa.org/en/latest/) + [mypy](http://mypy-lang.org/). Especially, we use [mypy as a flake8 plugin](https://pypi.org/project/flake8-mypy/) since we use flake8 for static analysis that goes beyond type-checking. We also configure our editor of choice (VS Code) to automatically highlights code which contradicts explicitely defined types, in the form of errors underlined in red. Other options to consider could be Facebook's [pyre check](https://pyre-check.org/).
 
-With static type checking, an entire class of bug can be eliminated by making it impossible to call functions with certain kind of values. What we really want is this:
+With static type checking, an entire class of bugs can be eliminated by making it impossible to call functions with specific kind of values. What we really want is this:
 
 > "Make illegal states unrepresentable"
 >
@@ -170,7 +170,7 @@ Let's see how we can generate test data and test our `add()` function against th
 
 #### Unit testing with unknown values: property-based testing
 
-The next step beyond unit tests with pytest's parametrized fixtures consists of asserting whether certain function properties always hold true for any values included in its domain for which the function is defined. This sounds kind of mathematical ("for all x, there exist... such as..."), and that is precisely what we're going to do.
+The next step beyond unit tests with pytest's parametrized fixtures consists of asserting whether specific function properties always hold true for any values included in its domain for which the function is defined. This sounds kind of mathematical ("for all x, there exist... such as..."), and that is precisely what we're going to do.
 
 Ideally, we should be checking our function against all possible values (but this input could be huge, possibly infinite), or we could be testing against a subset of randomly-generated data.
 
