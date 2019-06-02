@@ -25,18 +25,21 @@ def test_addition_parametrized(test_input, expected):
     assert add(a, b) == expected
 
 
-@given(integers(), integers())
+positive_integers = integers(min_value=0)
+
+
+@given(positive_integers, positive_integers)
 @example(a=2, b=3)
 def test_addition_commutativity(a, b):
     assert add(a, b) == add(b, a)
 
 
-@given(integers(), integers(), integers())
+@given(positive_integers, positive_integers, positive_integers)
 @example(a=2, b=3, c=5)
 def test_addition_associativity(a, b, c):
     assert add(a, add(b, c)) == add(add(a, b), c)
 
 
-@given(integers())
+@given(positive_integers)
 def test_addition_neutral_element(a):
     assert add(a, 0) == a
