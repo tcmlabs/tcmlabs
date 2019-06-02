@@ -15,16 +15,19 @@ Before we go further, let's establish a bit of terminology:
 - at "run time" (two words) refers to when [an application is running](<https://en.wikipedia.org/wiki/Run_time_(program_lifecycle_phase)>), in contrast to [compile time](Compile_time), which is _before_ an application is running.
 - a "runtime" (single word) refers to [an execution environment](https://en.wikipedia.org/wiki/Runtime_system) (ie. Python or Node.js interpreters, a browser, etc.)
 
-In Python, avoiding bugs at run time is a responsibility which is mostly left to the programmer. More precisely, this responsability is ensuring that all functions are called with expected values, and each of them return values that make sense from a business point of view.
+In Python, avoiding bugs at run time is a responsibility which is mostly left to the programmer. More precisely, this responsability is ensuring that all functions are called with expected values, and each of them return values that make sense.
 
 Typically, these checks are:
 
 - not done at all within the function
 - left to the responsability of the caller
 - done in the function with a few asserts which only check for some values
-- manually done and visually tested only, using the Python REPL or Jupyter notebook
+- making the function `None` if some checks fail
+- manually done with known "good" values and visually tested only, using the Python REPL or Jupyter notebook, but missing many of the "bad" values that could exist at run time
 
-The risk is shipping something which may not handle all business use cases, or may perform differently on some edge use cases that were missed.
+Some of the risks are:
+- shipping a code which may not handle all business use cases, or a code that may perform differently on some edge use cases that were missed
+- calling functions with values that have no business representation, but still called due to other functions returning "bad" values (`None`, etc.). It is important to understand that these bad values will flow through the functions until one can't handle it, making the program fail.
 
 In Python, nothing prevents a developer from **_not_** calling a function with values that doesn't mean anything from a business point of view, unless the developer takes care of it at run time. Put it the other way, Python accepts (at run time) calling a function with unintended values. Nothing will automatically check that values are expected, meaningful for the business and therefore allowed in our program.
 
