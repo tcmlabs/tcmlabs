@@ -26,6 +26,7 @@ Typically, these checks are:
 - manually done with known "good" values and visually tested only, using the Python REPL or Jupyter notebook, but missing many of the "bad" values that could exist at run time
 
 Some of the risks are:
+
 - shipping a code which may not handle all business use cases, or a code that may perform differently on some edge use cases that were missed
 - calling functions with values that have no business representation, but still called due to other functions returning "bad" values (`None`, etc.). It is important to understand that these bad values will flow through the functions until one can't handle it, making the program fail.
 
@@ -56,7 +57,7 @@ These sections correspond to checks that are executed at build time and test tim
 
 [Type checking in Python](https://docs.python.org/3/library/typing.html) is done using type hints, which were introduced experimentally in Python 3.5 and are now an official feature of the language (see, [PEP 483](https://www.python.org/dev/peps/pep-0483/), [484](https://www.python.org/dev/peps/pep-0484/) and [526](https://www.python.org/dev/peps/pep-0526/)).
 
-Type hints adds an extra syntax to the source code which indicates the types of variables. According to Wikipedia, *"[a data type or simply type]((https://en.wikipedia.org/wiki/Data_type)) is an attribute of data which tells the compiler or interpreter how the programmer intends to use the data"*.
+Type hints adds an extra syntax to the source code which indicates the types of variables. According to Wikipedia, _"[a data type or simply type](<(https://en.wikipedia.org/wiki/Data_type)>) is an attribute of data which tells the compiler or interpreter how the programmer intends to use the data"_.
 
 Some of the benefits of type hints:
 
@@ -248,7 +249,7 @@ add(2, 3)     # OK
 add(2, 3.5)   # Fails with "Error on Natural number: expected Natural number but was int"
 ```
 
-What we've done here is turn business expectations into [predicates](https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)) (functions returning booleans). These functions could now also be type-checked, tested and re-used elsewhere in our program, avoiding a lot of code duplication.
+What we've done here is turn business expectations into [predicates](<https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)>) (functions returning booleans). These functions could now also be type-checked, tested and re-used elsewhere in our program, avoiding a lot of code duplication.
 
 The above `@combinators.function` decorator will make the function fail at run time should it be called with any value which happens to be an integer (as defined using the `int` static type annotations), but is not a natural number (a positive integer).
 
