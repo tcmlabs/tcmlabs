@@ -1,6 +1,5 @@
-import * as _ from 'lodash';
-
 import Handlebars from 'handlebars';
+import * as _ from 'lodash';
 
 type Template = string;
 
