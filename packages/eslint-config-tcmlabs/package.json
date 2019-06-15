@@ -1,6 +1,12 @@
 {
   "name": "eslint-config-tcmlabs",
   "version": "0.0.1-alpha.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tcmlabs/tcmlabs.git",
+    "directory": "packages/eslint-config-tcmlabs"
+  },
+  "description": "A very opinionated ESLint configuration",
   "main": "index.js",
   "author": "TCM Labs",
   "license": "MIT",
