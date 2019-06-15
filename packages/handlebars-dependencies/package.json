@@ -1,11 +1,19 @@
 {
   "name": "handlebars-dependencies",
   "version": "1.0.0",
-  "main": "src/index.js",
   "author": "TCM Labs",
   "license": "MIT",
+  "main": "dist/index.js",
+  "umd:main": "dist/mylib.umd.production.js",
+  "module": "dist/mylib.es.production.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "jest"
+    "start": "tsdx watch",
+    "build": "rm -rf dist && tsdx build --target node",
+    "test": "tsdx test"
   },
   "devDependencies": {
     "@types/jest": "^24.0.14",
@@ -19,10 +27,12 @@
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
+    "tsdx": "^0.6.1",
     "typescript": "^3.5.2"
   },
   "dependencies": {
     "handlebars": "^4.1.2",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "lodash-es": "^4.17.11"
   }
 }

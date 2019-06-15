@@ -1,4 +1,4 @@
-import * as HandlebarsAnalyser from '.';
+import * as HandlebarsAnalyser from '../src';
 
 describe('Dependency graph', () => {
   test('Retrieve a single template dependencies', () => {
