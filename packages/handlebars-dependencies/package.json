@@ -26,7 +26,6 @@
     "eslint-plugin-react": "^7.13.0",
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
-    "ts-jest": "^24.0.2",
     "tsdx": "^0.6.1",
     "typescript": "^3.5.2"
   },
