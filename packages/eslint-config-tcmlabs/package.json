@@ -1,10 +1,9 @@
 {
-  "name": "@tcmlabs/packages",
+  "name": "eslint-config-tcmlabs",
   "version": "1.0.0",
   "main": "index.js",
   "author": "TCM Labs",
   "license": "MIT",
-  "private": true,
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.10.2",
     "@typescript-eslint/parser": "^1.10.2",
