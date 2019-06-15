@@ -7,6 +7,9 @@
       "path": "python-playground"
     },
     {
+      "path": "packages"
+    },
+    {
       "name": "tcmlabs",
       "path": "."
     }
