@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dependency graph Analyse dependencies 1`] = `
+Array [
+  Object {
+    "exist": true,
+    "name": "foo",
+  },
+  Object {
+    "exist": true,
+    "name": "baz",
+  },
+  Object {
+    "exist": false,
+    "name": "missing",
+  },
+]
+`;
+
+exports[`Dependency graph Retrieve a single template dependencies 1`] = `
+Array [
+  "foo",
+  "baz",
+  "missing",
+]
+`;
+
+exports[`Dependency graph Retrieve multiple template names 1`] = `
+Array [
+  "foo",
+]
+`;
+
+exports[`Dependency graph Retrieve template existing dependencies 1`] = `
+Array [
+  "foo",
+]
+`;
+
+exports[`Dependency graph Retrieve template missing dependencies 1`] = `
+Array [
+  "missing",
+]
+`;
