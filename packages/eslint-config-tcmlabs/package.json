@@ -1,6 +1,12 @@
 {
   "name": "eslint-config-tcmlabs",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tcmlabs/tcmlabs.git",
+    "directory": "packages/eslint-config-tcmlabs"
+  },
+  "description": "A very opinionated ESLint configuration",
   "main": "index.js",
   "author": "TCM Labs",
   "license": "MIT",
@@ -11,5 +17,6 @@
     "eslint-config-prettier": "^5.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2"
-  }
+  },
+  "gitHead": "360f090b4ec26952802052155ce8e43f3b00797e"
 }
