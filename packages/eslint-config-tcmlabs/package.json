@@ -10,13 +10,13 @@
   "main": "index.js",
   "author": "TCM Labs",
   "license": "MIT",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.10.2",
-    "@typescript-eslint/parser": "^1.10.2",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^5.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.18.2"
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
   },
   "gitHead": "360f090b4ec26952802052155ce8e43f3b00797e"
 }
