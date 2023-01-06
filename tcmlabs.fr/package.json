@@ -6,6 +6,9 @@
   "main": "index.js",
   "repository": "git@github.com:tcmlabs/tcmlabs.fr.git",
   "author": "TCM Labs",
+  "engines": {
+    "node": ">= 16 <17"
+  },
   "scripts": {
     "dev": "concurrently --restart-tries=3 --restart-after=1000 \"npm:gatsby-dev\" \"npm:graphql-types-watch\"",
     "gatsby-dev": "yarn start",
